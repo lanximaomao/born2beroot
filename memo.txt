@@ -1,0 +1,101 @@
+virtual box
+
+/goinfre/lsun/born2beroot.vdi
+
+
+how to find your ip address: ifconfig
+
+sudo
+
+
+ssh
+ssh 127.0.0.32 -l user
+service ssh restart
+sudo -i
+
+ssh -keygen
+
+ssh keys:
+private key - super secret
+public key - public
+
+
+
+
+UFW
+Uncomplicated Firewall
+
+
+
+sudo apt install ufw
+sudo ufw status
+vim /etc/default/ufw
+sudo ufw disable
+sudo ufw reset
+
+
+what is the file structure in a linux system?
+
+
+
+what is tcp?
+what is port?
+
+
+
+videos:
+
+
+Linux Security - UFW Complete Guide (Uncomplicated Firewall)
+
+Password: a
+
+lsblk
+
+
+
+
+Set up;
+
+1. Ssh
+
+2. Uff
+
+3. Hostname = lsun42, how to modify?
+
+4. All and configure sudo?
+
+5. User: root and lsun
+
+Lsun belong to user42 group
+
+5. Strong password policy
+
+
+
+Sudo apt install openssh-server
+Sudo nano /etc/ssh/sshd_config
+Sudo dhclient -r
+Sudo dhclient
+Ip a
+Sudo systemctl restart sushi
+
+
+
+1. why debian OS?
+2. What is localhost? on almost all networking system, local host use the IP address 127.0.0.1.
+3. how to install vim?
+
+apt install vim
+
+4. crontab
+https://www.ibm.com/docs/en/aix/7.2?topic=c-crontab-command
+
+5. DHCP - dynamic host configuration protocol
+https://www.efficientip.com/what-is-dhcp-and-why-is-it-important/
+
+5. use libpam-pwquality for enforcing password policy
+https://www.ibm.com/docs/en/psfa/7.2.1?topic=reuse-password-content-controls
+
+
+
