@@ -5,10 +5,12 @@ Installation - Sudo
   login as root: $ su -
   change sudo config: $ sudo visudo
   
-Installation - UFW
+Installation - UFW 
   install: $ sudo apt install ufw
   verify whether it is successfully installed: $ dpkg -l | grep ufw
-  enable firewall: $ sudo ufw enable
+  enable: $ sudo ufw enable
+  disable: $ sudo ufw disable
+  reset: $ sudo ufw reset
   allow incoming connections using Port 4242: $ sudo ufw allow 4242
   check ufw status: $ sudo ufw status
 
@@ -66,5 +68,17 @@ PASS_WARN_AGE 7
 Change in files - sudo vi /etc/pam.d/common-password
 password        requisite                       pam_pwquality.so retry=3 minlen=10 ucredit=-1 lcredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root
 
-  
+Evaluation:
+| 1) lsblk                              1 <- Check partitions
+| 2) sudo aa-status                     2 <- AppArmor status
+| 3) getent group sudo                  3 <- sudo group users
+| 4) getent group user42                4 <- user42 group users
+| 5) sudo service ssh status            5 <- ssh status, yep
+| 6) sudo ufw status                    6 <- ufw status
+| 7) ssh username@ipadress -p 4242      7 <- connect to VM from your host (physical) machine via SSH
+| 8) vim /etc/sudoers.d/<filename>      8 <- yes, sudo config file. You can $ ls /etc/sudoers.d first
+| 9) vim /etc/login.defs                9 <- password expire policy
+| 10) vim /etc/pam.d/common-password   10 <- password policy
+| 11) sudo crontab -l                  11 <- cron schedule
+
 
