@@ -36,7 +36,6 @@ User management - creating new user and user group
   add a user into sudo group: $ adduser <username> sudo
   check if user in sudo group: $ getent group sudo
   Verify newly-created user's password expiry information: $ sudo chage -l <username>
-  lsun username does not fullfill the password policy?!!!!
 
 Setup a cron job
   config cron as root: $ sudo crontab -u root -e
@@ -89,6 +88,7 @@ Sudo dhclient -r
 Sudo dhclient
 Ip a
 shasum Debian.vdi
+changing password: passwd
 
 Study resources:
 crontab: https://www.ibm.com/docs/en/aix/7.2?topic=c-crontab-command
