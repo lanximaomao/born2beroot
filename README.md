@@ -83,3 +83,16 @@ Evaluation:
 | 11) sudo crontab -l                  11 <- cron schedule
 | 12) sudo nano /etc/hostname          12 <- change hostname
 
+                                            
+Other useful commands:
+Sudo dhclient -r
+Sudo dhclient
+Ip a
+shasum Debian.vdi
+
+Study resources:
+crontab: https://www.ibm.com/docs/en/aix/7.2?topic=c-crontab-command
+DHCP - dynamic host configuration protocol: https://www.efficientip.com/what-is-dhcp-and-why-is-it-important/
+use libpam-pwquality for enforcing password policy: https://www.ibm.com/docs/en/psfa/7.2.1?topic=reuse-password-content-controls
+                                             
+                                   
