@@ -1,0 +1,70 @@
+# born2beroot
+
+Installation - Sudo
+  install: $ apt install sudo
+  login as root: $ su -
+  change sudo config: $ sudo visudo
+  
+Installation - UFW
+  install: $ sudo apt install ufw
+  verify whether it is successfully installed: $ dpkg -l | grep ufw
+  enable firewall: $ sudo ufw enable
+  allow incoming connections using Port 4242: $ sudo ufw allow 4242
+  check ufw status: $ sudo ufw status
+
+Installation - install vim and SSH
+  install vim: $ sudo apt install vim
+  ssh: $ sudo apt install openssh-server
+  check ssh server status: $ sudo systemctl status ssh
+  restart: $ service ssh restart
+  change ssh configuration: $ sudo vim /etc/ssh/sshd_config
+  
+User management - Password policy
+  setting up a strong password policy: $ sudo vi /etc/login.defs
+  setting up password strength: $ sudo apt install libpam-pwquality
+  verify libpam is successfully installed: $ dpkg -l | grep libpam-pwquality
+  configuration: $ sudo vi /etc/pam.d/common-password
+
+User management - creating new user and user group
+  create a new user: $ sudo adduser lsun
+  check if a user is successfully created: $ getent passwd lsun
+  create a new usergroup called user42: $ sudo addgroup user42
+  add the user lsun into a usergroup user42: $ sudo adduser lsun user42
+  add a user into sudo group: $ adduser <username> sudo
+  check if user in sudo group: $ getent group sudo
+  Verify newly-created user's password expiry information: $ sudo chage -l <username>
+  lsun username does not fullfill the password policy?!!!!
+
+Setup a cron job
+  config cron as root: $ sudo crontab -u root -e
+  schedule a shell script to run every 10 minutes: */10 * * * * sh /path/to/script
+  check root's scheduled cron jobs: $ sudo crontab -u root -l
+
+Change in files - sudo visudo 
+
+Defaults        env_reset
+Defaults        mail_badpass
+Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
+Defaults        passwd_tries=3
+Defaults        badpass_message="Bad passowrd, please try again!"
+Defaults        iolog_dir="/var/log/sudo/"
+Defaults        log_input,log_output
+Defaults        requiretty
+
+Change in files - vim /etc/ssh/sshd_config
+Port 4242 
+PermitRootLgin no
+
+Change in files - vim /etc/ssh/ssh_config
+Port 4242 
+
+Change in files - sudo vi /etc/login.defs
+PASS_MAX_DAYS 30
+PASS_MIN_DAYS 2
+PASS_WARN_AGE 7
+
+Change in files - sudo vi /etc/pam.d/common-password
+password        requisite                       pam_pwquality.so retry=3 minlen=10 ucredit=-1 lcredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root
+
+  
+
