@@ -80,5 +80,5 @@ Evaluation:
 | 9) vim /etc/login.defs                9 <- password expire policy
 | 10) vim /etc/pam.d/common-password   10 <- password policy
 | 11) sudo crontab -l                  11 <- cron schedule
-
+| 12) sudo nano /etc/hostname          12 <- change hostname
 
