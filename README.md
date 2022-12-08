@@ -11,7 +11,8 @@ Installation - UFW
   enable: $ sudo ufw enable
   disable: $ sudo ufw disable
   reset: $ sudo ufw reset
-  allow incoming connections using Port 4242: $ sudo ufw allow 4242
+  allow incoming connections using certain port: $ sudo ufw allow 4242
+  deny incoming connections using certain port: $ sudo ufw deny 4242
   check ufw status: $ sudo ufw status
 
 Installation - install vim and SSH
