@@ -21,6 +21,8 @@ Installation - install vim and SSH
   check ssh server status: $ sudo systemctl status ssh
   restart: $ service ssh restart
   change ssh configuration: $ sudo vim /etc/ssh/sshd_config
+  -- sudo ufw status numbered
+  -- sudo ufw delete 2
   
 User management - Password policy
   setting up a strong password policy: $ sudo vi /etc/login.defs
@@ -80,7 +82,11 @@ Evaluation:
 | 9) vim /etc/login.defs                9 <- password expire policy
 | 10) vim /etc/pam.d/common-password   10 <- password policy
 | 11) sudo crontab -l                  11 <- cron schedule
-| 12) sudo vim /etc/hostname          12 <- change hostname
+| 12) hostnamectl --static set-hostname new_hostname              12 <- change hostname
+or
+$ sudo vim /etc/hostname 
+or
+$ sudo vim /etc/hosts)
 
                                             
 Other useful commands:
