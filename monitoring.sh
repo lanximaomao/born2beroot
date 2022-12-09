@@ -1,8 +1,9 @@
 #!/bin/bash
 # The architecture of your operating system and its kernel version.
 # s for kernal name, r for kernel release and m for printing machine hardware name
-OS=$(hostnamectl | grep "Operating" | cut -b 21-)
-kernal_v=$(hostnamectl | grep "Kernel" | cut -b 21-)
+# OS=$(hostnamectl | grep "Operating" | cut -b 21-)
+# kernal_v=$(hostnamectl | grep "Kernel" | cut -b 21-)
+arc=$(uname -a)
 # The number of physical processors.
 p_cpu=$(lscpu | grep "Socket" | cut -b 34-)
 # The number of virtual processors.
@@ -33,7 +34,7 @@ mac_add=$(ip link show | awk '$1 == "link/ether" {print $2}')
 # The number of commands executed with the sudo program.
 sudo_comm=$(journalctl _COMM=sudo -q | grep COMMAND | wc -l)
 
-wall "		#Architecture: $kernal_v $OS
+wall "		#Architecture: $arc
 		#CPU physical: $p_cpu
 		#vCPU: $v_cpu
 		#Memory Usage: $mem_usage
