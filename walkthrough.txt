@@ -1,10 +1,10 @@
-## Installation - sudo
+Installation - sudo
 
   install: $ apt install sudo
   login as root: $ su -
   change sudo config: $ sudo visudo
 
-##Installation - UFW
+Installation - UFW
   install: $ sudo apt install ufw
   verify whether it is successfully installed: $ dpkg -l | grep ufw
   enable: $ sudo ufw enable
@@ -14,7 +14,7 @@
   deny incoming connections using certain port: $ sudo ufw deny 4242
   check ufw status: $ sudo ufw status
 
-##Installation - install vim and SSH
+Installation - install vim and SSH
   install vim: $ sudo apt install vim
   ssh: $ sudo apt install openssh-server
   check ssh server status: $ sudo systemctl status ssh
@@ -23,13 +23,13 @@
   -- sudo ufw status numbered
   -- sudo ufw delete 2
 
-##User management - Password policy
+User management - Password policy
   setting up a strong password policy: $ sudo vi /etc/login.defs
   setting up password strength: $ sudo apt install libpam-pwquality
   verify libpam is successfully installed: $ dpkg -l | grep libpam-pwquality
   configuration: $ sudo vi /etc/pam.d/common-password
 
-##User management - creating new user and user group
+User management - creating new user and user group
   create a new user: $ sudo adduser lsun
   check if a user is successfully created: $ getent passwd lsun
   create a new usergroup called user42: $ sudo addgroup user42
@@ -69,7 +69,7 @@ PASS_WARN_AGE 7
 Change in files - sudo vi /etc/pam.d/common-password
 password        requisite                       pam_pwquality.so retry=3 minlen=10 ucredit=-1 lcredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root
 
-##Evaluation:
+Evaluation:
 | 1) lsblk                              1 <- Check partitions
 | 2) sudo aa-status                     2 <- AppArmor status
 | 3) getent group sudo                  3 <- sudo group users
