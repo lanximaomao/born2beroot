@@ -25,6 +25,8 @@ More specifically, the monitoring script displays the following information:
 - The IPv4 address of your server and its MAC (Media Access Control) address.
 - The number of commands executed with the sudo program.
 
+Detailed project requirements can be found [here](Born2beRoot.pdf).
+
 <br>
 
 ## Language used
